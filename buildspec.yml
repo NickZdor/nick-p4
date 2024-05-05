@@ -2,12 +2,10 @@ version: 0.2
 
 phases:
   install:
+    runtime-versions:
+      nodejs: 18
     commands:
-      - curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
-      - export NVM_DIR="$HOME/.nvm"
-      - export NODE_VERSION=$(<.nvmrc)
-      - nvm install "$NODE_VERSION"
-      - nvm use "$NODE_VERSION"
+      - echo installing nodeJS version 20...
   pre_build:
     commands:
       - echo installing dependencies...
