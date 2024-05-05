@@ -5,8 +5,9 @@ phases:
     commands:
       - curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
       - export NVM_DIR="$HOME/.nvm"
-      - source "$NVM_DIR/nvm.sh"
-      - nvm install 20
+      - export NODE_VERSION=$(<.nvmrc)
+      - nvm install "$NODE_VERSION"
+      - nvm use "$NODE_VERSION"
   pre_build:
     commands:
       - echo installing dependencies...
